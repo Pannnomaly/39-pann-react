@@ -65,9 +65,9 @@ export default function Admin ()
             </div>
             
             <div className="mt-5 flex justify-between items-center">
-                <input id="name" type="text" className="w-md h-15 p-5 text-xl bg-pink-100 rounded-md shadow-md" placeholder="Name" value={formData.name} onChange={handleChange} disabled={loading} />
-                <input type="text" className="w-md h-15 p-5 text-xl bg-pink-100 rounded-md shadow-md" placeholder="Last name" value={formData.lastname} onChange={handleChange} disabled={loading} />
-                <input type="text" className="w-md h-15 p-5 text-xl bg-pink-100 rounded-md shadow-md" placeholder="Position" value={formData.position} onChange={handleChange} disabled={loading} />
+                <input name="name" type="text" className="w-md h-15 p-5 text-xl bg-pink-100 rounded-md shadow-md" placeholder="Name" value={(formData.name)} onChange={handleChange} disabled={loading} />
+                <input name="lastname" type="text" className="w-md h-15 p-5 text-xl bg-pink-100 rounded-md shadow-md" placeholder="Last name" value={formData.lastname} onChange={handleChange} disabled={loading} />
+                <input name="position" type="text" className="w-md h-15 p-5 text-xl bg-pink-100 rounded-md shadow-md" placeholder="Position" value={formData.position} onChange={handleChange} disabled={loading} />
                 <button type="submit" className="px-5 py-3 bg-pink-200 hover:bg-pink-300 hover:text-pink-100 border border-pink-200 rounded-md shadow-md text-xl font-semibold transition duration-300 ease-in-out cursor-pointer" disabled={loading} >{loading ? "Saving. . ." : "Save"}</button>
             </div>
             <DataTableAdmin />
