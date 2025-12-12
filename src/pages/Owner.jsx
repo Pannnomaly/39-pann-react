@@ -7,7 +7,7 @@ export default function Owner ()
                     <h1 className="font-semibold text-5xl">39_Supawith (Pann/ป่าน)</h1>
                 </div>
                 <div>
-                    <img src="https://media1.tenor.com/m/fAVCE3Qu6s8AAAAC/astolfo-happy.gif" alt="Happy Astolfo .gif" width="350px" className="rounded-2xl object-cover shadow-md" />
+                    <img src="pann-portrait2.jpg" alt="Happy Astolfo .gif" width="350px" className="rounded-2xl object-cover shadow-md" />
                 </div>
                 <div>
                     <p className="font-semibold text-3xl">Short Biography</p>
