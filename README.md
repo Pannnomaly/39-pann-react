@@ -1,2 +1,12 @@
-1. Create Vite React JavaScript Project
-2. Install and configure Tailwind
+# Thinking Process
+
+- เราจะเข้าไปดูตั้งแต่แรกเลยก็คือไฟล์ index.html ครับว่ามันเรียกใช้ component อะไรบ้าง ซึ่งก็คือมีการเรียกไฟล์ main.jsx
+- เราก็จะเข้าไปดูต่อว่า main.jsx เรียก component อะไรบ้าง ซึ่งนั่นก็คือ App.jsx ซึ่งตรงนี้จะเป็นจุดเริ่มต้นจริงๆ ของการวาง Layout ต่างๆ และเป็นการทำ routing ของ navigation bar ด้วย เราก็จะเรียกใช้ RouterProvider มาใช้งานเพื่อให้จัดการกับการทำเส้นทางของ nav ต่างๆ เราก็จะต้องมีไฟล์ component Layout.jsx, Home.jsx, Error.jsx, Owner.jsx ด้วยที่ Nav bar เพื่อให้กดแล้วไปยังหน้าที่ต้องการได้
+- คราวนี้เราก็จะมาดูว่าในแต่ละไฟล์ component มีการเรียก component อะไรอีกบ้าง เช่น
+    - ในมีการเรียก Layout.jsx ซึ่งในนี้ก็มี component Navbar.jsx ซึ่งเราก็จะไปสร้างของในนี้ต่อไป
+    - ใน Home.jsx ก็จะมีการเรียก component ToggleButton มาใช้ซึ่งมันคือ custom button ที่เราสร้างขึ้นมา เพื่อที่จะได้ไม่ต้องสร้างและสไตล์ปุ่มเองหลายรอบ และในหน้า Home นี้ก็จะมีการ set view ว่าถ้า view มีค่าเป็น user หรือ admin มันก็จะไปเรียก component User.jsx และ Admin.jsx มาแสดงผลต่อไป
+- ต่อมาก็จะเป็นหน้า User ซึ่งในนั้นก็จะมีการเรียก component DataTableUser.jsx มาแสดงผล ซึ่งใน DataTableUser.jsx ก็จะมีการ set useState และ useEffect เข้ามาเพื่อจัดการกับกานดึงข้อมูลจาก url ซึ่งเราจะใช้ axios ในการจัดการตรงนี้
+- หน้า Admin ก็จะคล้ายกับหน้า user เลย แต่จะมีการเพิ่ม input field เข้าเพื่อให้กรอกข้อมูลแล้วกดปุ่ม save เพื่อเพิ่ม data เข้าไปในตารางได้เลย
+- หน้า Owner ก็จะเป็นหน้า landing page ง่ายๆ ที่แสดงชื่อ รูปภาพและประวัติโดยย่อของเราซึ่งตอนนี้ใช้ lorem อยู่ 
+
+## หลักๆ ของ react คือเราต้องการย่อย code ให้เล็กที่สุด ซึ่งจะออกมาเป็น component ต่างๆ ที่สามารถเรียกใช้ต่อๆ กันได้ตาม state ของตัวแปรที่เราตั้งค่าเอาไว้ ซึ่งมันจะทำให้ code ของเราเป็นระเบียบมากขึ้นและสะอาดตามากขึ้นด้วยล่ะ!
