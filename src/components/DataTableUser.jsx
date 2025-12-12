@@ -1,8 +1,8 @@
 export default function DataTableUser ()
 {
     return (
-        <div className="flex justify-center items-center mt-20 shadow-md">
-            <table className="text-center text-xl">
+        <div className="flex justify-center items-center mt-20">
+            <table className="text-center text-xl shadow-md">
                 <thead>
                     <tr className="bg-pink-200">
                         <th className="border px-30 py-4">Name</th>
