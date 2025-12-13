@@ -42,9 +42,11 @@ export default function DataTableUser ()
 
     if (error)
     {
-        <div>
-            Error: {error.className}
-        </div>
+        return (
+            <div className="w-full flex justify-center items-center font-semibold text-xl text-red-500 mt-10">
+                Error: {error.className}
+            </div>
+        );
     }
 
     return (
