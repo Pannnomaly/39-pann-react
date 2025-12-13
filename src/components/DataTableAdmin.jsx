@@ -36,6 +36,19 @@ export default function DataTableAdmin ()
 
     console.log(data);
 
+    const handleDelete = async (id) => {
+
+        try {
+            
+            await axios.delete(`${url}/${id}`);
+            setData(prev => prev.filter(item => item.id !== id));
+            console.log("Delete successful");
+        } catch (error) {
+            setError(error);
+            console.log(error);
+        }
+    };
+
     if (loading)
     {
         return <div className="w-full flex justify-center items-center font-semibold text-xl mt-10">Loading data. . .</div>
@@ -43,9 +56,11 @@ export default function DataTableAdmin ()
 
     if (error)
     {
-        <div>
-            Error: {error.className}
-        </div>
+        return (
+            <div className="w-full flex justify-center items-center font-semibold text-xl text-red-500 mt-10">
+                Error: {error.className}
+            </div>
+        );
     }
 
     return (
@@ -65,7 +80,7 @@ export default function DataTableAdmin ()
                             <td className="border px-30 py-4">{item.name}</td>
                             <td className="border px-30 py-4">{item.lastname}</td>
                             <td className="border px-30 py-4">{item.position}</td>
-                            <td className="border px-30 py-4"><ToggleButton>Delete</ToggleButton></td>
+                            <td className="border px-30 py-4"><ToggleButton type={"button"} onClick={() => handleDelete(item.id)}>Delete</ToggleButton></td>
                         </tr>
                     ))}
                 </tbody>

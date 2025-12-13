@@ -1,6 +1,7 @@
 import { useState } from "react";
 import DataTableAdmin from "../components/DataTableAdmin";
 import axios from "axios";
+import ToggleButton from "../components/ToggleButton";
 
 export default function Admin ()
 {
@@ -68,7 +69,7 @@ export default function Admin ()
                 <input name="name" type="text" className="w-md h-15 p-5 text-xl bg-pink-100 rounded-md shadow-md" placeholder="Name" value={(formData.name)} onChange={handleChange} disabled={loading} />
                 <input name="lastname" type="text" className="w-md h-15 p-5 text-xl bg-pink-100 rounded-md shadow-md" placeholder="Last name" value={formData.lastname} onChange={handleChange} disabled={loading} />
                 <input name="position" type="text" className="w-md h-15 p-5 text-xl bg-pink-100 rounded-md shadow-md" placeholder="Position" value={formData.position} onChange={handleChange} disabled={loading} />
-                <button type="submit" className="px-5 py-3 bg-pink-200 hover:bg-pink-300 hover:text-pink-100 border border-pink-200 rounded-md shadow-md text-xl font-semibold transition duration-300 ease-in-out cursor-pointer" disabled={loading} >{loading ? "Saving. . ." : "Save"}</button>
+                <ToggleButton type={"submit"} disabled={loading} >{loading ? "Saving. . ." : "Save"}</ToggleButton>
             </div>
             <DataTableAdmin />
         </form>
