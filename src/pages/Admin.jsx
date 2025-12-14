@@ -56,7 +56,7 @@ export default function Admin ()
     if (error)
     {
         <div>
-            Error: {error.className}
+            Error: {error.message}
         </div>
     }
 
